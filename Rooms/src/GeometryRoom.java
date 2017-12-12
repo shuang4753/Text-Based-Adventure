@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class GeometryRoom extends Room {
 	Person occupant;
-	int sum;
-	private static boolean canMove = false;
+	private static boolean cantMove = true;
+	String problem;
 	
-	public GeometryRoom(int x, int y)	{
+	public GeometryRoom(int x, int y,String problem)	{
 		super(x,y);
+		this.problem=problem;
 		
 	}
 	
@@ -14,16 +15,16 @@ public class GeometryRoom extends Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
-		/*
+		
 		Scanner in = new Scanner(System.in);
-		while (canMove)	{
-			System.out.println("What does 2+2 equal to?");
+		while (cantMove)	{
+			System.out.println(problem);
 			String answer=in.nextLine();
-			if (answer.equals("4"))	{
-				canMove = true;
+			if (answer.equals("6"))	{
+				cantMove = false;
 			}
-			in.close();
-		}*/
+		}
+		in.close();
 	}
 }
 

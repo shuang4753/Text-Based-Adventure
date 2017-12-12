@@ -19,14 +19,14 @@ public class Runner {
 		}
 		
 		//Create a random winning room.
-		/*int x = (int)(Math.random()*building.length);
+		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y);*/
+		building[x][y] = new WinningRoom(x, y);
 		
 		//Create a random Geometry room
 		int a = (int)(Math.random()*building.length);
 		int b = (int)(Math.random()*building.length);
-		building[a][b] = new GeometryRoom(a,b); 
+		building[0][0] = new GeometryRoom(a,b,"What is 2+4"); 
 		
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
