@@ -26,7 +26,7 @@ public class Runner {
 		//Create a random Geometry room
 		int a = (int)(Math.random()*building.length);
 		int b = (int)(Math.random()*building.length);
-		building[0][0] = new GeometryRoom(a,b,"What is 2+4"); 
+		building[x][y] = new GeometryRoom(a,b,"What is 2+4"); 
 		
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
