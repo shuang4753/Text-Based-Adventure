@@ -15,7 +15,9 @@ public class Runner {
 			for (int y = 0; y < building[x].length; y++)
 			{
 				building[x][y] = new Room(x,y);
+				building[x][y].print();
 			}
+			System.out.println();
 		}
 		
 		//Create a random winning room.
@@ -26,7 +28,7 @@ public class Runner {
 		//Create a random Geometry room
 		int a = (int)(Math.random()*building.length);
 		int b = (int)(Math.random()*building.length);
-		building[x][y] = new GeometryRoom(a,b,"What is 2+4"); 
+		building[x][y] = new GeometryRoom(a,b,3,5); 
 		
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);

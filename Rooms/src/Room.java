@@ -28,6 +28,6 @@ public class Room {
 	
 	public void print()	
 	{
-		System.out.println("[ ]");
+		System.out.print("[ ]");
 	}
 }
