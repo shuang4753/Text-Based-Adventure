@@ -14,7 +14,7 @@ public class Runner {
 		{
 			for (int y = 0; y < building[x].length; y++)
 			{
-				building[x][y] = new Room(x,y);
+				building[x][y] = new Room(x,y, false);
 				building[x][y].print();
 			}
 			System.out.println();
@@ -28,7 +28,7 @@ public class Runner {
 		//Create a random Geometry room
 		int a = (int)(Math.random()*building.length);
 		int b = (int)(Math.random()*building.length);
-		building[x][y] = new GeometryRoom(a,b,3,5); 
+		building[0][0] = new GeometryRoom(a,b,5,5); 
 		
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -56,7 +56,7 @@ public class Runner {
 	{
 		move = move.toLowerCase().trim();
 		switch (move) {
-			case "w":
+			case "n":
 				if (p.getxLoc() > 0)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
@@ -67,7 +67,7 @@ public class Runner {
 				{
 					return false;
 				}
-			case "d":
+			case "e":
 				if (p.getyLoc()< map[p.getyLoc()].length -1)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
@@ -91,7 +91,7 @@ public class Runner {
 					return false;
 				}
 
-			case "a":
+			case "w":
 				if (p.getyLoc() > 0)
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);

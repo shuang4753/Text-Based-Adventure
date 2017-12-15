@@ -1,13 +1,16 @@
 
 public class Room {
-	Person occupant;
-	int xLoc,yLoc;
+	private Person occupant;
+	protected int xLoc;
+	private boolean explored;
+	private int yLoc;
 	
 	
-	public Room(int x, int y)
+	public Room(int x, int y,boolean explored)
 	{
 		xLoc = x;
 		yLoc = y;
+		this.explored=explored;
 	}
 	
 	
@@ -28,6 +31,19 @@ public class Room {
 	
 	public void print()	
 	{
-		System.out.print("[ ]");
+		if (!explored && occupant==null)
+		{
+			System.out.print("[ ]");
+		}
+		
+		/*else if (explored && !(occupant==null))
+		{	
+			System.out.print("["+rooms.print+"]");	
+		}*/
+		
+		else if (!(occupant==null))
+		{
+			System.out.print("[" + occupant.firstName + "]");
+		}
 	}
 }

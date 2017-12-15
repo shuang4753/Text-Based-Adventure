@@ -8,7 +8,7 @@ public class GeometryRoom extends Room {
 	private int num2;
 	
 	public GeometryRoom(int x, int y, int num1,int num2)	{
-		super(x,y);
+		super(x,y,false);
 		
 		this.num1=num1;
 		this.num2=num2;
@@ -17,22 +17,22 @@ public class GeometryRoom extends Room {
 	public void enterRoom(Person x)	{
 		num1=(int) (Math.random()*5);
 		num2=(int) (Math.random()*5);
-		
+		int sum=num1+num2;
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		
-		Scanner in = new Scanner(System.in);
+		Scanner in1 = new Scanner(System.in);
 		while (cantMove)	
 		{
 			System.out.println("What is "+num1+" plus "+num2+" ?" );
-			String answer=in.nextLine();
-			if (answer.equals(num1+num2))	{
+			int answer=in1.nextInt();
+			if (answer == (sum)) 	{
 				System.out.println("Congratulations, you earned the Geometry Badge!");
 				cantMove = false;
 			}
 		}
-		in.close();
+		
 	}
 }
 
