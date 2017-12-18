@@ -19,8 +19,8 @@ public class GeometryRoom extends Room {
 		num2=(int) (Math.random()*5);
 		int sum=num1+num2;
 		occupant = x;
-		x.setxLoc(this.xLoc);
-		x.setyLoc(this.yLoc);
+		x.setxLoc(this.getxLoc());
+		x.setyLoc(this.getyLoc());
 		
 		Scanner in1 = new Scanner(System.in);
 		while (cantMove)	

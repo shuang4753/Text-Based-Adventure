@@ -16,6 +16,7 @@ public class Runner {
 			{
 				building[x][y] = new Room(x,y, false);
 				building[x][y].print();
+				
 			}
 			System.out.println();
 		}
@@ -28,7 +29,7 @@ public class Runner {
 		//Create a random Geometry room
 		int a = (int)(Math.random()*building.length);
 		int b = (int)(Math.random()*building.length);
-		building[0][0] = new GeometryRoom(a,b,5,5); 
+		building[x][y] = new GeometryRoom(a,b,5,5); 
 		
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
@@ -39,7 +40,8 @@ public class Runner {
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
 			if(validMove(move, player1, building))
-			{
+			{	
+			
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
 				
 			}
@@ -61,6 +63,7 @@ public class Runner {
 				{
 					map[p.getxLoc()][p.getyLoc()].leaveRoom(p);
 					map[p.getxLoc()-1][p.getyLoc()].enterRoom(p);
+					
 					return true;
 				}
 				else
@@ -106,6 +109,7 @@ public class Runner {
 				break;
 					
 		}
+		
 		return true;
 	}
 	public static void gameOff()

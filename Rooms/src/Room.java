@@ -1,7 +1,49 @@
 
 public class Room {
 	private Person occupant;
-	protected int xLoc;
+	private int xLoc;
+	
+	
+	public Person getOccupant() {
+		return occupant;
+	}
+
+
+	public void setOccupant(Person occupant) {
+		this.occupant = occupant;
+	}
+
+
+	public int getxLoc() {
+		return xLoc;
+	}
+
+
+	public void setxLoc(int xLoc) {
+		this.xLoc = xLoc;
+	}
+
+
+	public boolean isExplored() {
+		return explored;
+	}
+
+
+	public void setExplored(boolean explored) {
+		this.explored = explored;
+	}
+
+
+	public int getyLoc() {
+		return yLoc;
+	}
+
+
+	public void setyLoc(int yLoc) {
+		this.yLoc = yLoc;
+	}
+
+
 	private boolean explored;
 	private int yLoc;
 	
@@ -31,19 +73,14 @@ public class Room {
 	
 	public void print()	
 	{
-		if (!explored && occupant==null)
+		if (!explored)
 		{
-			System.out.print("[ ]");
+			System.out.print("[?]");
 		}
 		
-		/*else if (explored && !(occupant==null))
-		{	
-			System.out.print("["+rooms.print+"]");	
-		}*/
-		
-		else if (!(occupant==null))
+		else if ((occupant==null))	
 		{
-			System.out.print("[" + occupant.firstName + "]");
+			System.out.print("[Simon]");
 		}
 	}
 }
