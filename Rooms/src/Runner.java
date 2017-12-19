@@ -31,6 +31,8 @@ public class Runner {
 		int b = (int)(Math.random()*building.length);
 		building[x][y] = new GeometryRoom(a,b,5,5); 
 		
+		Board map = new Board(building);
+		
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
@@ -42,14 +44,14 @@ public class Runner {
 			if(validMove(move, player1, building))
 			{	
 			
-				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc()+ "\n\n");
 				
 			}
 			else {
 				System.out.println("Please choose a valid move.");
 			}
 			
-			
+			map.printBoard();
 		}
 		in.close();
 	}

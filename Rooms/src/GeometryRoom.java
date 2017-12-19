@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class GeometryRoom extends Room {
+public class GeometryRoom extends Room 
+{
 	Person occupant;
 	private static boolean cantMove = true;
 	
@@ -14,7 +15,8 @@ public class GeometryRoom extends Room {
 		this.num2=num2;
 	}
 	
-	public void enterRoom(Person x)	{
+	public void enterRoom(Person x)
+	{
 		num1=(int) (Math.random()*5);
 		num2=(int) (Math.random()*5);
 		int sum=num1+num2;
@@ -27,10 +29,17 @@ public class GeometryRoom extends Room {
 		{
 			System.out.println("What is "+num1+" plus "+num2+" ?" );
 			int answer=in1.nextInt();
-			if (answer == (sum)) 	{
+			if (answer == (sum)) 	
+			{
 				System.out.println("Congratulations, you earned the Geometry Badge!");
 				cantMove = false;
+				
+			if (answer != (sum))	
+			{
+				System.out.println("please enter a number");
 			}
+			}
+			
 		}
 		
 	}

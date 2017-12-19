@@ -62,6 +62,7 @@ public class Room {
 		occupant = x;
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
+		explored=true;
 	}
 	
 	
@@ -73,14 +74,19 @@ public class Room {
 	
 	public void print()	
 	{
+		
 		if (!explored)
 		{
-			System.out.print("[?]");
+			System.out.print("[ ? ]");
 		}
 		
-		else if ((occupant==null))	
+		else if (!(occupant==null))	
 		{
-			System.out.print("[Simon]");
+			System.out.print("[You]");
+		}
+		else
+		{
+			System.out.print("[   ]");
 		}
 	}
 }
