@@ -3,8 +3,6 @@ import java.util.Scanner;
 public class GeometryRoom extends Room 
 {
 	Person occupant;
-	private static boolean cantMove = true;
-	
 	private int num1;
 	private int num2;
 	
@@ -13,6 +11,7 @@ public class GeometryRoom extends Room
 		
 		this.num1=num1;
 		this.num2=num2;
+		
 	}
 	
 	public void enterRoom(Person x)
@@ -25,14 +24,14 @@ public class GeometryRoom extends Room
 		x.setyLoc(this.getyLoc());
 		
 		Scanner in1 = new Scanner(System.in);
-		while (cantMove)	
+		while (isCantMove())	
 		{
 			System.out.println("What is "+num1+" plus "+num2+" ?" );
 			int answer=in1.nextInt();
 			if (answer == (sum)) 	
 			{
 				System.out.println("Congratulations, you earned the Geometry Badge!");
-				cantMove = false;
+				setCantMove(false);
 				
 			if (answer != (sum))	
 			{

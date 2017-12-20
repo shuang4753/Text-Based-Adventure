@@ -2,7 +2,9 @@
 public class Room {
 	private Person occupant;
 	private int xLoc;
-	
+	private boolean explored;
+	private int yLoc;
+	private boolean cantMove;
 	
 	public Person getOccupant() {
 		return occupant;
@@ -42,17 +44,13 @@ public class Room {
 	public void setyLoc(int yLoc) {
 		this.yLoc = yLoc;
 	}
-
-
-	private boolean explored;
-	private int yLoc;
 	
-	
-	public Room(int x, int y,boolean explored)
+	public Room(int x, int y,boolean explored, boolean cantMove)
 	{
 		xLoc = x;
 		yLoc = y;
 		this.explored=explored;
+		cantMove = true;
 	}
 	
 	
@@ -82,11 +80,21 @@ public class Room {
 		
 		else if (!(occupant==null))	
 		{
-			System.out.print("[You]");
+			System.out.print("[" +  occupant.firstName + "]");
 		}
 		else
 		{
 			System.out.print("[   ]");
 		}
+	}
+
+
+	public boolean isCantMove() {
+		return cantMove;
+	}
+
+
+	public void setCantMove(boolean cantMove) {
+		this.cantMove = cantMove;
 	}
 }
