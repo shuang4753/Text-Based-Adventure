@@ -1,19 +1,45 @@
-
+import java.util.InputMismatchException;
+import java.util.Scanner;
 public class WorldHistoryRoom extends Room{
 	
-	private String question;
 
-	public WorldHistoryRoom(int x, int y, boolean explored, String question) 
+	private boolean cantMove=true;
+
+	public WorldHistoryRoom(int x, int y, boolean explored) 
 	{	
 		super(x, y, explored);
-		this.question= question;
+
 	}
 		
 	public void enterRoom(Person x) {
 		x.setxLoc(this.getxLoc());
 		x.setyLoc(this.getyLoc());
+		Scanner in2 = new Scanner(System.in);
+		String answer="";
 		
-		while
-	}
+		while(cantMove)
+		{
+			
+			System.out.print("Which nation is known as the land of the Rising Sun? ");
+			try 
+			{
+				answer=in2.nextLine();
+			}
+			catch (InputMismatchException e)
+			{
+				
+				System.out.print("That's not the correct answer. Try again. \n");
+			}
+			
+			if (answer.equals("Japan"))	
+			{
+				System.out.println("Congratualions! You received the World History Badge! \n");
+				cantMove= false;
+			}
+			
+			
+			
+		}
 
+	}
 }

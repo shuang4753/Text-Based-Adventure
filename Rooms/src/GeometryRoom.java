@@ -1,10 +1,12 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GeometryRoom extends Room 
 {
-	Person occupant;
+	//private Person occupant;
 	private int num1;
 	private int num2;
+	private boolean cantMove=true;
 	
 	public GeometryRoom(int x, int y, int num1,int num2)	{
 		super(x,y,false);
@@ -16,27 +18,32 @@ public class GeometryRoom extends Room
 	
 	public void enterRoom(Person x)
 	{
+		this.setExplored(true);
 		num1=(int) (Math.random()*5);
 		num2=(int) (Math.random()*5);
 		int sum=num1+num2;
-		occupant = x;
 		x.setxLoc(this.getxLoc());
 		x.setyLoc(this.getyLoc());
+		int answer=0;
 		
 		Scanner in1 = new Scanner(System.in);
-		while (isCantMove())	
+		while (cantMove)	
 		{
-			System.out.println("What is "+num1+" plus "+num2+" ?" );
-			int answer=in1.nextInt();
+			System.out.println("What is "+num1+" plus "+num2+"?" );
+			try 
+			{
+				in1.nextInt();	
+			}
+			catch (InputMismatchException e)
+			{
+				in1.next();
+				System.out.print("That's not an interger. Try again. \n");
+			}
+			
 			if (answer == (sum)) 	
 			{
 				System.out.println("Congratulations, you earned the Geometry Badge!");
-				setCantMove(false);
-				
-			if (answer != (sum))	
-			{
-				System.out.println("please enter a number");
-			}
+				cantMove = false;
 			}
 			
 		}

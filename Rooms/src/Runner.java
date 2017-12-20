@@ -24,27 +24,33 @@ public class Runner {
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
 		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y);
+		building[x][y] = new WinningRoom(x, y, false);
 		
 		//Create a random Geometry room
 		int a = (int)(Math.random()*building.length);
 		int b = (int)(Math.random()*building.length);
-		building[x][y] = new GeometryRoom(a,b,5,5); 
+		building[a][b] = new GeometryRoom(a,b,5,5); 
 		
-		Board map = new Board(building);
+		//Create a random World History Room
+		int c = (int)(Math.random()*building.length);
+		int d = (int)(Math.random()*building.length);
+		building[0][0] = new WorldHistoryRoom(c,d,false);
+		
+		
+		Board map = new Board(7);
 		
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("Simon", "Huang", 0,0);
-		building[0][0].enterRoom(player1);
+		map.getRooms()[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
 			System.out.println("Where would you like to move? (Choose W, A, S, D)");
 			String move = in.nextLine();
-			if(validMove(move, player1, building))
+			if(validMove(move, player1, map.getRooms()))
 			{	
 			
-				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc()+ "\n\n");
+				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
 				
 			}
 			else {
