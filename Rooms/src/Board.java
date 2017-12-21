@@ -1,6 +1,6 @@
 
 public class Board {
-	
+	//xD
 	private Room[][] rooms;
 	
 	//This constructor creates a board using an int. Must create all the rooms in this constructor.
