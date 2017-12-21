@@ -20,16 +20,22 @@ public class Board {
 				int y = (int)(Math.random()*size);
 				getRooms()[x][y] = new WinningRoom(x, y, false);
 				
-				//Create a random Geometry room
+		//Create a random Geometry room
 				int a = (int)(Math.random()*size);
 				int b = (int)(Math.random()*size);
 				getRooms()[a][b] = new GeometryRoom(a,b,5,5); 
 				
-				//Create a random World History Room
+		//Create a random World History Room
 				int c = (int)(Math.random()*size);
 				int d = (int)(Math.random()*size);
 				getRooms()[c][d] = new WorldHistoryRoom(c,d,false);
+		
+		//Create a random Calculus Room
+				int e = (int)(Math.random()*size);
+				int f = (int)(Math.random()*size);
+				getRooms()[0][0] = new CalculusRoom(e,f,false);
 	}
+	
 	
 	public Board(Room[][] rooms) {
 		this.rooms=rooms;

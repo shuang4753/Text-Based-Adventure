@@ -40,6 +40,11 @@ public class Runner {
 		int d = (int)(Math.random()*building.length);
 		building[c][d] = new WorldHistoryRoom(c,d,false);
 		
+		//Create a random Calculus Room
+		int e = (int)(Math.random()*building.length);
+		int f = (int)(Math.random()*building.length);
+		building[0][0] = new CalculusRoom(e,f,false);
+		
 		
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("Simon", "Huang", 0,0);
