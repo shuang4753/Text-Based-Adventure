@@ -3,6 +3,7 @@ public class Board {
 	
 	private Room[][] rooms;
 	
+	//This constructor creates a board using an int. Must create all the rooms in this constructor.
 	public Board(int size)	{
 		this.rooms=new Room[size][size];
 		for (int x = 0; x<size; x++)
@@ -14,6 +15,20 @@ public class Board {
 			}
 			System.out.println();
 		}
+		//Create a random winning room.
+				int x = (int)(Math.random()*size);
+				int y = (int)(Math.random()*size);
+				getRooms()[x][y] = new WinningRoom(x, y, false);
+				
+				//Create a random Geometry room
+				int a = (int)(Math.random()*size);
+				int b = (int)(Math.random()*size);
+				getRooms()[a][b] = new GeometryRoom(a,b,5,5); 
+				
+				//Create a random World History Room
+				int c = (int)(Math.random()*size);
+				int d = (int)(Math.random()*size);
+				getRooms()[c][d] = new WorldHistoryRoom(c,d,false);
 	}
 	
 	public Board(Room[][] rooms) {

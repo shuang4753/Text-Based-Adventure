@@ -9,7 +9,11 @@ public class Runner {
 	{
 		Room[][] building = new Room[5][5];
 		
-		//Fill the building with normal rooms
+		//Enter in a int or the array called building. Different boards can be created.
+		Board map = new Board(building);
+		
+		
+		//This for loop creates a Board using the 2d array called building
 		for (int x = 0; x<building.length; x++)
 		{
 			for (int y = 0; y < building[x].length; y++)
@@ -34,10 +38,8 @@ public class Runner {
 		//Create a random World History Room
 		int c = (int)(Math.random()*building.length);
 		int d = (int)(Math.random()*building.length);
-		building[0][0] = new WorldHistoryRoom(c,d,false);
+		building[c][d] = new WorldHistoryRoom(c,d,false);
 		
-		
-		Board map = new Board(7);
 		
 		//Setup player 1 and the input scanner
 		Person player1 = new Person("Simon", "Huang", 0,0);
