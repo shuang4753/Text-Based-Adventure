@@ -43,7 +43,7 @@ public class Runner {
 		//Create a random Calculus Room
 		int e = (int)(Math.random()*building.length);
 		int f = (int)(Math.random()*building.length);
-		building[0][0] = new CalculusRoom(e,f,false);
+		building[e][f] = new CalculusRoom(e,f,false);
 		
 		
 		//Setup player 1 and the input scanner

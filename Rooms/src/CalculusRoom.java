@@ -13,19 +13,20 @@ public class CalculusRoom extends Room {
 		x.setyLoc(getyLoc());
 		String answer="";
 		Scanner in3 = new Scanner(System.in);
-		while(cantMove)	{
+		while(cantMove)	
+		{
 			System.out.print("What is the integral of u prime over u? (u'/u)");
-			try	{
-				answer=in3.nextLine();
-			}
+			try	
+				{answer=in3.nextLine();}
+			
 			catch (InputMismatchException e)
-			{
-				
-				System.out.print("That's not the correct answer. Try again. \n");
-			}
-			if (answer.equals("lnu"));// || answer.equals("natural log of u");
-			cantMove= false;
-			}
+				{System.out.print("That's not the correct answer. Try again. \n");}
+			
+			if (answer.equals("lnu") || equals("natural log of u") || equals("ln(u)"))
+				{System.out.println("Congratulations! You passed Calculus! Move to another room!");
+					cantMove= false;}
+			
+		}
 		
 		}
 	}

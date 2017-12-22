@@ -31,9 +31,9 @@ public class WorldHistoryRoom extends Room{
 				System.out.print("That's not the correct answer. Try again. \n");
 			}
 			
-			if (answer.equals("Japan"))	
+			if (answer.equals("Japan") || equals("japan"))	
 			{
-				System.out.println("Congratualions! You received the World History Badge! \n");
+				System.out.println("Congratualions! You received the World History Badge! Move to another room!");
 				cantMove= false;
 			}
 			

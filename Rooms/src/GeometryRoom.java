@@ -32,7 +32,7 @@ public class GeometryRoom extends Room
 			System.out.println("What is "+num1+" plus "+num2+"?" );
 			try 
 			{
-				in1.nextInt();	
+				answer=in1.nextInt();	
 			}
 			catch (InputMismatchException e)
 			{
@@ -42,12 +42,29 @@ public class GeometryRoom extends Room
 			
 			if (answer == (sum)) 	
 			{
-				System.out.println("Congratulations, you earned the Geometry Badge!");
+				System.out.println("Congratulations, you earned the Geometry Badge! Move to another room!");
 				cantMove = false;
 			}
 			
 		}
 		
+	}
+	
+	public void print()	
+	{
+		if (!isExplored())
+		{
+			System.out.print("[ ? ]");
+		}
+		
+		else if (!(this.getOccupant()==null))	
+		{
+			System.out.print("[" +  this.getOccupant().firstName + "]");
+		}
+		else
+		{
+			System.out.print("[ G ]");
+		}
 	}
 }
 
