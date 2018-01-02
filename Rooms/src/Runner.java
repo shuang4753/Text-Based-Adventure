@@ -19,10 +19,7 @@ public class Runner {
 			for (int y = 0; y < building[x].length; y++)
 			{
 				building[x][y] = new Room(x,y, false);
-				building[x][y].print();
-				
 			}
-			System.out.println();
 		}
 		
 		//Create a random winning room.
@@ -50,8 +47,10 @@ public class Runner {
 		Person player1 = new Person("Simon", "Huang", 0,0);
 		map.getRooms()[0][0].enterRoom(player1);
 		Scanner in = new Scanner(System.in);
+
 		while(gameOn)
 		{
+			map.printBoard();
 			System.out.println("Where would you like to move? (Choose W, A, S, D)");
 			String move = in.nextLine();
 			if(validMove(move, player1, map.getRooms()))
@@ -64,7 +63,7 @@ public class Runner {
 				System.out.println("Please choose a valid move.");
 			}
 			
-			map.printBoard();
+			
 		}
 		in.close();
 	}

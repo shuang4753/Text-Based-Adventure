@@ -1,6 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-public class WorldHistoryRoom extends Room{
+public class WorldHistoryRoom extends Room
+{
 	
 
 	private boolean cantMove=true;
@@ -11,7 +12,8 @@ public class WorldHistoryRoom extends Room{
 
 	}
 		
-	public void enterRoom(Person x) {
+	public void enterRoom(Person x) 
+	{
 		x.setxLoc(this.getxLoc());
 		x.setyLoc(this.getyLoc());
 		Scanner in2 = new Scanner(System.in);
@@ -36,10 +38,22 @@ public class WorldHistoryRoom extends Room{
 				System.out.println("Congratualions! You received the World History Badge! Move to another room!");
 				cantMove= false;
 			}
-			
-			
-			
 		}
-
 	}
+			
+			
+			
+		
+		
+	public void print()
+	{
+		if (!isExplored())
+		{
+			System.out.print("[ H ]");
+		}
+		
+		else
+			System.out.print("[   ]");
+	}
+
 }

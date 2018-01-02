@@ -49,22 +49,16 @@ public class GeometryRoom extends Room
 		}
 		
 	}
-	
 	public void print()	
 	{
-		if (!isExplored())
-		{
-			System.out.print("[ ? ]");
-		}
 		
-		else if (!(this.getOccupant()==null))	
-		{
-			System.out.print("[" +  this.getOccupant().firstName + "]");
-		}
-		else
+		if (!isExplored())
 		{
 			System.out.print("[ G ]");
 		}
+		
+		else
+			System.out.print("[   ]");
 	}
 }
 

@@ -29,6 +29,17 @@ public class CalculusRoom extends Room {
 		}
 		
 		}
+	
+	public void print()	
+	{
+		if (!isExplored())
+		{
+			System.out.print("[ C ]");
+		}
+		
+		else
+			System.out.print("[   ]");
 	}
+}
 
 
