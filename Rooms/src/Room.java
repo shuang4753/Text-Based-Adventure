@@ -4,6 +4,7 @@ public class Room {
 	private int xLoc;
 	private int yLoc;
 	private boolean explored;
+	private Reward badge;
 	
 	
 	public Room(int x, int y,boolean explored)
