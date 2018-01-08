@@ -4,7 +4,7 @@ public class Room {
 	private int xLoc;
 	private int yLoc;
 	private boolean explored;
-	private Reward badge;
+	
 	
 	
 	public Room(int x, int y,boolean explored)
@@ -55,8 +55,6 @@ public class Room {
 	}
 
 	
-	
-	
 	public void enterRoom(Person x)
 	{
 		System.out.println("You enter a plain old room");
@@ -78,17 +76,19 @@ public class Room {
 		
 		if (!explored)
 		{
-			System.out.print("[ ? ]");
+			System.out.print("[?]");
 		}
 		
 		else if (!(occupant==null))	
 		{
-			System.out.print("[" +  occupant.firstName + "]");
+			System.out.print("[" +  "You" + "]");
 		}
 		else
 		{
-			System.out.print("[   ]");
+			System.out.print("[ ]");
 		}
 	}
+
+	
 }
 

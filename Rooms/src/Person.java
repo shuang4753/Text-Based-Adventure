@@ -1,8 +1,8 @@
 
 public class Person {
-	String firstName;
-	String familyName;
-	int xLoc, yLoc;
+	private String firstName;
+	private String familyName;
+	private int xLoc, yLoc;
 	
 	public int getxLoc() {
 		return xLoc;

@@ -29,4 +29,8 @@ public String getSubject() {
 public void setSubject(String subject) {
 	this.subject = subject;
 }
+
+public void addToInventory(Reward a) {
+	this.getName()
+}
 }

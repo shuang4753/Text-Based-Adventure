@@ -34,12 +34,10 @@ public class CalculusRoom extends Room {
 	{
 		if (!isExplored())
 		{
-			System.out.print("[ C ]");
+			System.out.print("[C]");
 		}
 		
-		else
-			System.out.print("[   ]");
-	}
+	}	
 }
 
 

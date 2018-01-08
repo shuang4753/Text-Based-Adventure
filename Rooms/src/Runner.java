@@ -23,9 +23,10 @@ public class Runner {
 		}
 		
 		//Create a random winning room.
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y, false);
+		//while ()
+		//int x = (int)(Math.random()*building.length);
+		//int y = (int)(Math.random()*building.length);
+		//building[x][y] = new WinningRoom(x, y, false);
 		
 		//Create a random Geometry room
 		int a = (int)(Math.random()*building.length);

@@ -6,7 +6,8 @@ public class GeometryRoom extends Room
 	//private Person occupant;
 	private int num1;
 	private int num2;
-	private boolean cantMove=true;
+	private static boolean cantMove=true;
+	private boolean Reward_Shape=false;
 	
 	public GeometryRoom(int x, int y, int num1,int num2)	{
 		super(x,y,false);
@@ -18,6 +19,8 @@ public class GeometryRoom extends Room
 	
 	public void enterRoom(Person x)
 	{
+		
+		
 		this.setExplored(true);
 		num1=(int) (Math.random()*5);
 		num2=(int) (Math.random()*5);
@@ -43,22 +46,24 @@ public class GeometryRoom extends Room
 			if (answer == (sum)) 	
 			{
 				System.out.println("Congratulations, you earned the Geometry Badge! Move to another room!");
+				
 				cantMove = false;
 			}
 			
 		}
 		
 	}
-	public void print()	
+	public void print()
 	{
-		
 		if (!isExplored())
 		{
-			System.out.print("[ G ]");
+			System.out.print("[G]");
 		}
-		
+	
 		else
-			System.out.print("[   ]");
+		{
+			System.out.print("[G]");
+		}
 	}
 }
 

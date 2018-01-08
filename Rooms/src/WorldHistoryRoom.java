@@ -4,7 +4,7 @@ public class WorldHistoryRoom extends Room
 {
 	
 
-	private boolean cantMove=true;
+	private static boolean cantMove=true;
 
 	public WorldHistoryRoom(int x, int y, boolean explored) 
 	{	
@@ -49,11 +49,8 @@ public class WorldHistoryRoom extends Room
 	{
 		if (!isExplored())
 		{
-			System.out.print("[ H ]");
+			System.out.print("[H]");
 		}
-		
-		else
-			System.out.print("[   ]");
 	}
 
 }
