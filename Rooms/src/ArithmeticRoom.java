@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class GeometryRoom extends Room 
+public class ArithmeticRoom extends Room 
 {
 	//private Person occupant;
 	private int num1;
@@ -9,7 +9,7 @@ public class GeometryRoom extends Room
 	private static boolean cantMove=true;
 	private boolean Reward_Shape=false;
 	
-	public GeometryRoom(int x, int y, int num1,int num2)	{
+	public ArithmeticRoom(int x, int y, int num1,int num2)	{
 		super(x,y,false);
 		
 		this.num1=num1;

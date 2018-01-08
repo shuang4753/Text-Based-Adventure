@@ -9,7 +9,7 @@ public class WinningRoom extends Room {
 	}
 	@Override
 	public void enterRoom(Person x) {
-		// TODO Auto-generated method stub
+		if (ArithmeticRoom)
 		setOccupant(x);
 		x.setxLoc(this.getxLoc());
 		x.setyLoc(this.getyLoc());

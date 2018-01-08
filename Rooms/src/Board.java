@@ -23,7 +23,7 @@ public class Board {
 		//Create a random Geometry room
 				int a = (int)(Math.random()*size);
 				int b = (int)(Math.random()*size);
-				getRooms()[a][b] = new GeometryRoom(a,b,5,5); 
+				getRooms()[a][b] = new ArithmeticRoom(a,b,5,5); 
 				
 		//Create a random World History Room
 				int c = (int)(Math.random()*size);

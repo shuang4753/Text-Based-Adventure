@@ -31,7 +31,7 @@ public class Runner {
 		//Create a random Geometry room
 		int a = (int)(Math.random()*building.length);
 		int b = (int)(Math.random()*building.length);
-		building[a][b] = new GeometryRoom(a,b,5,5); 
+		building[a][b] = new ArithmeticRoom(a,b,5,5); 
 		
 		//Create a random World History Room
 		int c = (int)(Math.random()*building.length);
