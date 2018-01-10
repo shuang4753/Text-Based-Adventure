@@ -20,7 +20,7 @@ public class ArithmeticRoom extends Room
 	public void enterRoom(Person x)
 	{
 		
-		
+		setOccupant(x);
 		this.setExplored(true);
 		num1=(int) (Math.random()*5);
 		num2=(int) (Math.random()*5);

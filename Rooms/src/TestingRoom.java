@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TestingRoom extends Room {
@@ -16,18 +15,45 @@ public class TestingRoom extends Room {
 		x.setxLoc(this.getxLoc());
 		x.setyLoc(this.getyLoc());
 		Scanner test = new Scanner(System.in);
-		String answer="2x";
+		String answer1="2x";
+		String answer2="123";
+		String answer3="Thomas Woodrow Wilson";
+		String answer4="Wilson";
 		
 		if (getOccupant().isCalculator()==true && getOccupant().isDerivative()==true && getOccupant().isOldTextbook()==true )
 		{
 			System.out.println("You found the Testing Room. Time to test your knowledge using your tools.\n"
 					+ "What is the derivative of x squared?");
-				answer= test.nextLine();
+			if (answer1.equals(test.nextLine()))
+			{
+				System.out.println("Good... it seems you know your calculus. Next question! \n"
+						+ "What is 12*10+3?");
+			}
+				if (answer2.equals(test.nextLine()))
+				{
+					System.out.println("Amazing! You are almost about to graduate! \n"
+							+ "The final question: who was America's 28th president?");
+				}
+					if (answer3.equals(test.nextLine()) || answer4.equals(test.nextLine()))
+					{
+						System.out.println("Congratulations!!! You graduated high school! :) Time to move on to bigger things.");
+					}
+					//Runner.gameOff();
 		}
-			
+		
+		else
+		{
+			System.out.println("Sorry, you do not have the adequate intellect to proceed testing. Please leave the room and learn more.");
+		}
 		
 		Runner.gameOff();
 	}
 	
+	public void print () {
+		if (!isExplored())
+		{
+			System.out.print("[T]");
+		}
+	}
 
 }

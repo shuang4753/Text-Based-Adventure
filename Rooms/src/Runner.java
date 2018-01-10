@@ -7,7 +7,7 @@ public class Runner {
 	
 	public static void main(String[] args)
 	{
-		Room[][] building = new Room[5][5];
+		Room[][] building = new Room[4][4];
 		
 		//Enter in a int or the array called building. Different boards can be created.
 		Board map = new Board(building);
@@ -23,10 +23,9 @@ public class Runner {
 		}
 		
 		//Create a random winning room.
-		//while ()
-		//int x = (int)(Math.random()*building.length);
-		//int y = (int)(Math.random()*building.length);
-		//building[x][y] = new WinningRoom(x, y, false);
+		int x = (int)(Math.random()*building.length);
+		int y = (int)(Math.random()*building.length);
+		building[x][y] = new TestingRoom(x, y);
 		
 		//Create a random Geometry room
 		int a = (int)(Math.random()*building.length);

@@ -13,6 +13,7 @@ public class WorldHistoryRoom extends Room
 		
 	public void enterRoom(Person x) 
 	{
+		setOccupant(x);
 		x.setxLoc(this.getxLoc());
 		x.setyLoc(this.getyLoc());
 		Scanner in2 = new Scanner(System.in);

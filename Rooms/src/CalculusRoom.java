@@ -3,13 +3,14 @@ import java.util.Scanner;
 
 public class CalculusRoom extends Room {
 	
-	private static boolean derivative=false;
+	
 	public CalculusRoom(int x, int y) {
 		super(x, y);
 		
 	}
 	
 	public void enterRoom(Person x)	{
+		setOccupant(x);
 		x.setxLoc(getxLoc());
 		x.setyLoc(getyLoc());
 		String answer="";
@@ -51,5 +52,6 @@ public class CalculusRoom extends Room {
 		
 	}
 
+	
 }
 
