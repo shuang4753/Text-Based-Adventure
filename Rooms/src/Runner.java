@@ -18,7 +18,7 @@ public class Runner {
 		{
 			for (int y = 0; y < building[x].length; y++)
 			{
-				building[x][y] = new Room(x,y, false);
+				building[x][y] = new Room(x,y);
 			}
 		}
 		
@@ -36,12 +36,12 @@ public class Runner {
 		//Create a random World History Room
 		int c = (int)(Math.random()*building.length);
 		int d = (int)(Math.random()*building.length);
-		building[c][d] = new WorldHistoryRoom(c,d,false);
+		building[c][d] = new WorldHistoryRoom(c,d);
 		
 		//Create a random Calculus Room
 		int e = (int)(Math.random()*building.length);
 		int f = (int)(Math.random()*building.length);
-		building[e][f] = new CalculusRoom(e,f,false);
+		building[e][f] = new CalculusRoom(e,f);
 		
 		
 		//Setup player 1 and the input scanner

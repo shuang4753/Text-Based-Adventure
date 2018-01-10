@@ -4,14 +4,16 @@ public class Room {
 	private int xLoc;
 	private int yLoc;
 	private boolean explored;
+	private boolean cantMove;
 	
 	
 	
-	public Room(int x, int y,boolean explored)
+	public Room(int x, int y)
 	{
 		xLoc = x;
 		yLoc = y;
 		this.explored=false;
+		this.cantMove=true;
 
 	}
 	
@@ -87,6 +89,14 @@ public class Room {
 		{
 			System.out.print("[ ]");
 		}
+	}
+
+	public boolean isCantMove() {
+		return cantMove;
+	}
+
+	public void setCantMove(boolean cantMove) {
+		this.cantMove = cantMove;
 	}
 
 	

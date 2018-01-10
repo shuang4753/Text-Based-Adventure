@@ -6,11 +6,11 @@ public class ArithmeticRoom extends Room
 	//private Person occupant;
 	private int num1;
 	private int num2;
-	private static boolean cantMove=true;
-	private boolean Reward_Shape=false;
+	
+
 	
 	public ArithmeticRoom(int x, int y, int num1,int num2)	{
-		super(x,y,false);
+		super(x,y);
 		
 		this.num1=num1;
 		this.num2=num2;
@@ -30,7 +30,7 @@ public class ArithmeticRoom extends Room
 		int answer=0;
 		
 		Scanner in1 = new Scanner(System.in);
-		while (cantMove)	
+		while (isCantMove())	
 		{
 			System.out.println("What is "+num1+" plus "+num2+"?" );
 			try 
@@ -46,8 +46,8 @@ public class ArithmeticRoom extends Room
 			if (answer == (sum)) 	
 			{
 				System.out.println("Congratulations, you earned the Geometry Badge! Move to another room!");
-				
-				cantMove = false;
+				getOccupant().setCalculator(true);
+				setCantMove(false);
 			}
 			
 		}
@@ -65,5 +65,7 @@ public class ArithmeticRoom extends Room
 			System.out.print("[G]");
 		}
 	}
+
+	
 }
 

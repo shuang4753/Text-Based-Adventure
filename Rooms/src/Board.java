@@ -10,7 +10,7 @@ public class Board {
 		{
 			for (int y = 0; y < size; y++)
 			{
-				getRooms()[x][y] = new Room(x,y, false);
+				getRooms()[x][y] = new Room(x,y);
 				getRooms()[x][y].print();
 			}
 			System.out.println();
@@ -18,7 +18,7 @@ public class Board {
 		//Create a random winning room.
 				int x = (int)(Math.random()*size);
 				int y = (int)(Math.random()*size);
-				getRooms()[x][y] = new WinningRoom(x, y, false);
+				getRooms()[x][y] = new TestingRoom(x, y);
 				
 		//Create a random Geometry room
 				int a = (int)(Math.random()*size);
@@ -28,12 +28,12 @@ public class Board {
 		//Create a random World History Room
 				int c = (int)(Math.random()*size);
 				int d = (int)(Math.random()*size);
-				getRooms()[c][d] = new WorldHistoryRoom(c,d,false);
+				getRooms()[c][d] = new WorldHistoryRoom(c,d);
 		
 		//Create a random Calculus Room
 				int e = (int)(Math.random()*size);
 				int f = (int)(Math.random()*size);
-				getRooms()[0][0] = new CalculusRoom(e,f,false);
+				getRooms()[0][0] = new CalculusRoom(e,f);
 	}
 	
 	

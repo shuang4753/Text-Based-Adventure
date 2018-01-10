@@ -3,12 +3,11 @@ import java.util.Scanner;
 public class WorldHistoryRoom extends Room
 {
 	
+	
 
-	private static boolean cantMove=true;
-
-	public WorldHistoryRoom(int x, int y, boolean explored) 
+	public WorldHistoryRoom(int x, int y) 
 	{	
-		super(x, y, explored);
+		super(x, y);
 
 	}
 		
@@ -19,7 +18,7 @@ public class WorldHistoryRoom extends Room
 		Scanner in2 = new Scanner(System.in);
 		String answer="";
 		
-		while(cantMove)
+		while(isCantMove())
 		{
 			
 			System.out.print("Which nation is known as the land of the Rising Sun? ");
@@ -33,10 +32,15 @@ public class WorldHistoryRoom extends Room
 				System.out.print("That's not the correct answer. Try again. \n");
 			}
 			
-			if (answer.equals("Japan") || equals("japan"))	
+			if (answer.equals("Japan") || answer.equals("japan"))	
 			{
 				System.out.println("Congratualions! You received the World History Badge! Move to another room!");
-				cantMove= false;
+				setCantMove(false);
+				getOccupant().setOldTextbook(true);
+			}
+			
+			else {
+				System.out.println("Wrong answer, try again.");
 			}
 		}
 	}

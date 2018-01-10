@@ -2,9 +2,10 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CalculusRoom extends Room {
-	private static boolean cantMove= true;
-	public CalculusRoom(int x, int y, boolean explored) {
-		super(x, y, explored);
+	
+	private static boolean derivative=false;
+	public CalculusRoom(int x, int y) {
+		super(x, y);
 		
 	}
 	
@@ -13,18 +14,29 @@ public class CalculusRoom extends Room {
 		x.setyLoc(getyLoc());
 		String answer="";
 		Scanner in3 = new Scanner(System.in);
-		while(cantMove)	
+		while(isCantMove())	
 		{
 			System.out.print("What is the integral of u prime over u? (u'/u)");
 			try	
-				{answer=in3.nextLine();}
+			{
+				answer=in3.nextLine();
+			}
 			
 			catch (InputMismatchException e)
-				{System.out.print("That's not the correct answer. Try again. \n");}
+			{
+				System.out.print("That's not the correct answer. Try again. \n");
+			}
 			
-			if (answer.equals("lnu") || equals("natural log of u") || equals("ln(u)"))
-				{System.out.println("Congratulations! You passed Calculus! Move to another room!");
-					cantMove= false;}
+			if (answer.equals("lnu") || answer.equals("natural log of u") || answer.equals("ln(u)"))
+			{
+				System.out.println("Congratulations! You passed Calculus! Move to another room!");
+					setCantMove(false);
+					getOccupant().setDerivative(true);
+			}
+			else {
+				System.out.println("Wrong answer, try again");
+			}
+			
 			
 		}
 		
@@ -37,7 +49,7 @@ public class CalculusRoom extends Room {
 			System.out.print("[C]");
 		}
 		
-	}	
-}
+	}
 
+}
 
