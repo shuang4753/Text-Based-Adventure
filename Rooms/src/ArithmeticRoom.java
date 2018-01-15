@@ -9,9 +9,8 @@ public class ArithmeticRoom extends Room
 	
 
 	
-	public ArithmeticRoom(int x, int y, int num1,int num2)	{
-		super(x,y);
-		
+	public ArithmeticRoom(int x, int y, int difficulty, int num1,int num2)	{
+		super(x,y,0);
 		this.num1=num1;
 		this.num2=num2;
 		
@@ -25,44 +24,93 @@ public class ArithmeticRoom extends Room
 		num1=(int) (Math.random()*5);
 		num2=(int) (Math.random()*5);
 		int sum=num1+num2;
+		int product=num1*num2;
+		int hardquestion=num1/(num2*(num1/2+num2/2));
 		x.setxLoc(this.getxLoc());
 		x.setyLoc(this.getyLoc());
 		int answer=0;
 		
+		
 		Scanner in1 = new Scanner(System.in);
 		while (isCantMove())	
 		{
-			System.out.println("What is "+num1+" plus "+num2+"?" );
-			try 
+			if (Board.getDifficulty()==1) 
 			{
-				answer=in1.nextInt();	
-			}
-			catch (InputMismatchException e)
-			{
-				in1.next();
-				System.out.print("That's not an interger. Try again. \n");
+				System.out.println("What is "+num1+" plus "+num2+"?" );
+				try 
+				{
+					answer=in1.nextInt();	
+				}
+				catch (InputMismatchException e)
+				{
+					in1.next();
+					System.out.print("That's not an interger. Try again. \n");
+				}
+			
+				if (answer == (sum)) 	
+				{
+					System.out.println("Congratulations, you earned a Calculator! Move to another room!\n");
+					getOccupant().setCalculator(true);
+					setCantMove(false);
+				}
+			
 			}
 			
-			if (answer == (sum)) 	
+			
+			if (Board.getDifficulty()==2) 
 			{
-				System.out.println("Congratulations, you earned the Geometry Badge! Move to another room!");
-				getOccupant().setCalculator(true);
-				setCantMove(false);
+				System.out.println("What is "+num1+" times "+num2+"?" );
+				try 
+				{
+					answer=in1.nextInt();	
+				}
+				catch (InputMismatchException e)
+				{
+					in1.next();
+					System.out.print("That's not an interger. Try again. \n");
+				}
+			
+				if (answer == (product)) 	
+				{
+					System.out.println("Congratulations, you earned a Calculator! Move to another room!\n");
+					getOccupant().setCalculator(true);
+					setCantMove(false);
+				}
 			}
 			
+			
+			if (Board.getDifficulty()==3) 
+			{
+				System.out.println("What is " + num1 + "/(" + num2 + "(" + num1/2 + "+" + num2/2 + "))" );
+				try 
+				{
+					answer=in1.nextInt();	
+				}
+				catch (InputMismatchException e)
+				{
+					in1.next();
+					System.out.print("That's not an interger. Try again. \n");
+				}
+			
+				if (answer == (hardquestion)) 	
+				{
+					System.out.println("Congratulations, you earned a Calculator! Move to another room!\n");
+					getOccupant().setCalculator(true);
+					setCantMove(false);
+				}
+			}
 		}
-		
 	}
 	public void print()
 	{
 		if (!isExplored())
 		{
-			System.out.print("[G]");
+			System.out.print("[A]");
 		}
 	
 		else
 		{
-			System.out.print("[G]");
+			System.out.print("[A]");
 		}
 	}
 

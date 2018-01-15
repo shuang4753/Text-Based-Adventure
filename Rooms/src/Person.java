@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Person {
 	private String firstName;
@@ -6,9 +7,9 @@ public class Person {
 	private boolean calculator, oldTextbook, derivative;
 	
 	
-	public Person (String firstName, String familyName, int xLoc, int yLoc)
+	public Person (String name, String familyName, int xLoc, int yLoc)
 	{
-		this.firstName = firstName;
+		this.firstName = name;
 		this.familyName = familyName;
 		this.xLoc = xLoc;
 		this.yLoc = yLoc;

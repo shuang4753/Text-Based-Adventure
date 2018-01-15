@@ -5,16 +5,44 @@ public class Room {
 	private int yLoc;
 	private boolean explored;
 	private boolean cantMove;
+	private int difficulty;
 	
 	
-	
-	public Room(int x, int y)
+	public Room(int x, int y, int difficulty)
 	{
 		xLoc = x;
 		yLoc = y;
 		this.explored=false;
 		this.cantMove=true;
+		difficulty=Board.getDifficulty();
 
+	}
+	
+	public void enterRoom(Person x)
+	{
+		System.out.println("\nYou enter a plain old room");
+		occupant = x;
+		x.setxLoc(this.xLoc);
+		x.setyLoc(this.yLoc);
+		explored=true;
+	}
+	
+	public void print()	
+	{
+		
+		if (!explored)
+		{
+			System.out.print("[?]");
+		}
+		
+		else if (!(occupant==null))	
+		{
+			System.out.print("[" +  getOccupant().getFirstName() + "]");
+		}
+		else
+		{
+			System.out.print("[ ]");
+		}
 	}
 	
 	public Person getOccupant() {
@@ -55,42 +83,7 @@ public class Room {
 	public void setyLoc(int yLoc) {
 		this.yLoc = yLoc;
 	}
-
 	
-	public void enterRoom(Person x)
-	{
-		System.out.println("You enter a plain old room");
-		occupant = x;
-		x.setxLoc(this.xLoc);
-		x.setyLoc(this.yLoc);
-		explored=true;
-	}
-	
-	
-	public void leaveRoom(Person x)
-	{
-		occupant = null;
-	}
-	
-	
-	public void print()	
-	{
-		
-		if (!explored)
-		{
-			System.out.print("[?]");
-		}
-		
-		else if (!(occupant==null))	
-		{
-			System.out.print("[" +  "You" + "]");
-		}
-		else
-		{
-			System.out.print("[ ]");
-		}
-	}
-
 	public boolean isCantMove() {
 		return cantMove;
 	}
@@ -99,6 +92,17 @@ public class Room {
 		this.cantMove = cantMove;
 	}
 
+	public int getDifficulty() {
+		return difficulty;
+	}
+
+	public void setDifficulty(int difficulty) {
+		this.difficulty = difficulty;
+	}
 	
+	public void leaveRoom(Person x)
+	{
+		occupant = null;
+	}
 }
 
